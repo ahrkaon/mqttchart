@@ -10,7 +10,7 @@ function requestData()
 
       Highcharts.chart('container', {
         title: {
-          text: 'Temp & Pres'
+          text: 'Temp'
         },
         yAxis: {
           title: {
@@ -19,7 +19,7 @@ function requestData()
         },
         xAxis: {
           title:{
-            text:'ID'
+            text:'count'
           }
         },
         legend: {
@@ -38,10 +38,7 @@ function requestData()
         series: [{
           name: 'Temp',
           data: data
-        },{
-            name:'pres',
-            data:''
-        }
+        },
         ],
         responsive: {
           rules: [{
