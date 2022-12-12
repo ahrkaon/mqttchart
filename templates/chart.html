@@ -10,15 +10,31 @@
         <script src="http://code.highcharts.com/highcharts-more.js"></script>
         <script src="http://code.highcharts.com/modules/exporting.js"></script>
     </head>
-    <body>
-        <h1>Temp&pres</h1>
-        <div>
-            <canvas id="myChart"></canvas>
-          </div>
+    <body style="overflow-y:hidden">
+        <h1>Temp&SolarVoltage</h1>
+        <div id="solar">
+            <img src="/solar" width="600" height="405">
+            </div>
+        <div id="here"> again dynamic content <span id='off'>7</span></div>
         <figure class="highcharts-figure">
             <div id="container"></div>
         </figure>
         <script src="/static/js/test.js"></script>
+        <script>
+            $(document).ready(function(){
+                var counter = 7;
+            window.setInterval(function(){
+             counter--;
+              if(counter>=0){
+                document.getElementById('off').innerHTML=counter;
+              }
+              if (counter===0){
+                counter=7;
+              }
+            $("#solar").load(" #solar");
+            }, 30000);
+            });
+        </script>
 
     </body>
 </html>
